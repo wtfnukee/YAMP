@@ -1,0 +1,28 @@
+name:                YAMP
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/wtfnukee/YAMP#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Egor Konovalov
+maintainer:          hehenukee@gmail.com
+copyright:           2022 Egor Konovalov
+category:            Math
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     YAMP
+                     , YAMP.Combinatorics
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+executable YAMP
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , YAMP
