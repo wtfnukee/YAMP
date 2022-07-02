@@ -7,8 +7,14 @@ import Prelude hiding (product)
 product :: Integral n => [a] -> n -> [[a]]
 product = undefined
 
-permutations :: Integral n => [a] -> n -> [[a]]
-permutations = undefined
+permutations :: (Eq a) => [a] -> [[a]]
+permutations [] = [[]]
+permutations xs = [a:x | a <- xs, x <- (permutations $ filter (\x-> x /= a) xs)]
 
-combinations :: Integral n => [a] -> n -> [[a]]
-combinations = undefined
+combinations :: Integral n => n -> [a] -> [[a]]
+combinations 0 _ = [[]]
+combinations _ [] = []
+combinations n (x:xs) = map (x:) (combinations (n-1) xs) ++ combinations n xs
+
+main :: IO ()
+main = print $ permutations "ABC"
