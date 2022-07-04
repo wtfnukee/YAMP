@@ -1,6 +1,7 @@
 # YAMP
 ## Yet Another Math Package
 Currently supports:
-* Combinatorics
 * Calculus
+* Combinatorics
+* Linear Algebra
 * Number theory
