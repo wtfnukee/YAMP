@@ -1,5 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 module LinearAlgebra where
+import Data.List (intercalate)
 
 -- Vectors are Column Vectors
 data Vector i = Vector [i]
@@ -29,3 +30,6 @@ dot (Vector v1) (Vector v2) = sum $ zipWith (*) v1 v2
 (·) :: Num a => Vector a -> Vector a -> a
 x · y = dot x y
 infix 7 ·
+
+vectorToLatex :: Show a => Vector a -> String
+vectorToLatex (Vector v) = "\\begin{bmatrix}" ++ (intercalate "\\\\" $ map show v) ++ "\\end{bmatrix}"
