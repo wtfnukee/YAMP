@@ -1,5 +1,9 @@
 {-# LANGUAGE ScopedTypeVariables #-}
-module LinearAlgebra where
+module YAMP.LinearAlgebra
+    ( Vector(..)
+    , dot, (·)
+    , vectorToLatex
+    ) where
 import Data.List (intercalate)
 
 -- Vectors are Column Vectors

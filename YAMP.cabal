@@ -16,9 +16,10 @@ extra-source-files:  README.md
 library
   hs-source-dirs:      src
   exposed-modules:     YAMP
-                     , YAMP.Combinatorics
-                     , YAMP.NumberTheory
                      , YAMP.Calculus
+                     , YAMP.Combinatorics
+                     , YAMP.LinearAlgebra
+                     , YAMP.NumberTheory
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 

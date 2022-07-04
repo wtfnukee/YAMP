@@ -1,4 +1,4 @@
-module Calculus
+module YAMP.Calculus
     (integrate
     ) where
 

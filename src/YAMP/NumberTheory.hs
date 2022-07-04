@@ -1,4 +1,4 @@
-module NumberTheory
+module YAMP.NumberTheory
     (factors
    , prime
    , primes) where
