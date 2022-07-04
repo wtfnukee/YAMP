@@ -18,6 +18,9 @@ instance (Show i) => Show (Vector i) where
 instance Functor Vector where
     fmap f (Vector v) = Vector (map f v)
 
+instance Foldable Vector where
+    foldr f i (Vector v) = foldr f i v
+
 instance (Num i, Floating i) => Num (Vector i) where
     (Vector v1) + (Vector v2) = Vector (zipWith (+) v1 v2)
     (Vector v1) - (Vector v2) = Vector (zipWith (-) v1 v2)
