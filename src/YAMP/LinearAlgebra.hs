@@ -1,10 +1,14 @@
 module LinearAlgebra where
 
 -- Vectors are Column Vectors
-data Vector i = Vector [i] deriving Show
+data Vector i = Vector [i]
 
 instance (Eq i) => Eq (Vector i) where
     (Vector v1) == (Vector v2) = v1 == v2
+
+instance (Show i) => Show (Vector i) where
+    show (Vector v) = init $ unlines $ map show v
+
 instance Functor Vector where
     fmap f (Vector v) = Vector (map f v)
 
