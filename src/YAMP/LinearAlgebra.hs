@@ -15,6 +15,9 @@ instance Functor Vector where
 instance (Num i, Floating i) => Num (Vector i) where
     (Vector v1) + (Vector v2) = Vector (zipWith (+) v1 v2)
     (Vector v1) - (Vector v2) = Vector (zipWith (-) v1 v2)
+    (Vector v1) * (Vector v2) = undefined
     abs (Vector v) = Vector [sqrt $ sum $ map square v]
         where square x = x * x
     negate = fmap negate
+    signum = undefined -- You can't really take a sign of vector
+    fromInteger i = Vector [fromInteger i]
