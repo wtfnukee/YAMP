@@ -1,3 +1,4 @@
+{-# LANGUAGE ScopedTypeVariables #-}
 module LinearAlgebra where
 
 -- Vectors are Column Vectors
@@ -21,3 +22,10 @@ instance (Num i, Floating i) => Num (Vector i) where
     negate = fmap negate
     signum = undefined -- You can't really take a sign of vector
     fromInteger i = Vector [fromInteger i]
+
+dot :: Num a => Vector a -> Vector a -> a
+dot (Vector v1) (Vector v2) = sum $ zipWith (*) v1 v2
+
+(·) :: Num a => Vector a -> Vector a -> a
+x · y = dot x y
+infix 7 ·
