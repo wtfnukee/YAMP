@@ -21,4 +21,4 @@ jobs:
           # cabal-version: 'latest'. Omitted, but defalts to 'latest'
           enable-stack: true
           stack-version: 'latest'
-      - run: runhaskell app\Main.hs
+      - run: runhaskell app/Main.hs
