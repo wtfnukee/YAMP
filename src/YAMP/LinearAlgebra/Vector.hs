@@ -1,5 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
-module YAMP.LinearAlgebra
+
+module YAMP.LinearAlgebra.Vector
     ( Vector(..)
     , dot, (·)
     , vectorToLatex

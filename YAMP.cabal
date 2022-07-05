@@ -18,7 +18,8 @@ library
   exposed-modules:     YAMP
                      , YAMP.Calculus
                      , YAMP.Combinatorics
-                     , YAMP.LinearAlgebra
+                     , YAMP.LinearAlgebra.Vector
+                     , YAMP.LinearAlgebra.Matrix
                      , YAMP.NumberTheory
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
@@ -29,3 +30,19 @@ executable YAMP
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
                      , YAMP
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      base >= 4.7 && < 5
+    , hspec ==2.*
+    , strip
+  other-modules:
+      Data.String.StripSpec
+      Paths_strip
+  default-language: Haskell2010
+  build-tool-depends: hspec-discover:hspec-discover == 2.*
